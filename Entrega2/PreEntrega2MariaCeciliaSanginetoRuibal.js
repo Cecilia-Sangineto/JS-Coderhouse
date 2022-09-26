@@ -24,25 +24,28 @@ agregar.addEventListener('click', () => {
     let prenda = new Prenda(precio, tipo, cantidad)
 
     prendas.push(prenda)
-})
-
-mostrar.addEventListener('click', () => {
-        prendas.forEach(prenda => document.write(prenda.tipo))
+    alert(prendas.length)
 })
 
 
+let zonaPrenda = document.getElementById("mostrar-productos")
+mostrar.addEventListener('mouseover', () => {
+       
+})
+
+mostrar.addEventListener('mouseout', () => {
+
+})
+
+
+let zonaDefinicion = document.getElementById('total-productos')
+let element = document.createElement('p')
+zonaDefinicion.appendChild(element)
 total.addEventListener('click', () => {
-    cantidad_total = 0
-
-    let zonaDefinicion = document.getElementById('total-productos')
-
+    let cantidad_total = 0
     for (index of prendas) {
-        cantidad_total = total + parseInt(index.precio_total())
+        cantidad_total = +  index.precio_total()
     }
-
-    let element = document.createElement('p')
-    element.textContent = total
-    zonaDefinicion.appendChild(element)
-
+    element.textContent = cantidad_total
 })
 
