@@ -28,9 +28,20 @@ agregar.addEventListener('click', () => {
 })
 
 
+function lista_actual() {
+    let contenido = ""
+    prendas.forEach(prenda =>
+        contenido = `${contenido} ${prenda.precio} ${prenda.tipo} ${prenda.cantidad} `)
+    return contenido
+}
+
 let zonaPrenda = document.getElementById("mostrar-productos")
+let elemento = document.createElement('p')
+elemento.classList.add("Nodo")
+zonaPrenda.appendChild(elemento)
+
 mostrar.addEventListener('mouseover', () => {
-       
+    elemento.textContent = lista_actual()
 })
 
 mostrar.addEventListener('mouseout', () => {
