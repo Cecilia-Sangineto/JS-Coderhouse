@@ -11,7 +11,7 @@ class Cliente {
     }
 
     calcularImpuesto() {
-        return (`El impuesto total a pagar es: ${(this.impuestos.monto_bruto_anual - this.impuestos.deducciones) * 0.21}`);
+        return (`El impuesto del cliente ${this.cliente} es: ${(this.impuestos.monto_bruto_anual - this.impuestos.deducciones) * 0.21}`);
     }
 }
 
