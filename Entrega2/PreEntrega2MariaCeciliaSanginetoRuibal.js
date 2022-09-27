@@ -27,11 +27,10 @@ agregar.addEventListener('click', () => {
     alert(prendas.length)
 })
 
-
 function lista_actual() {
     let contenido = ""
-    prendas.forEach(prenda =>
-        contenido = `${contenido} ${prenda.precio} ${prenda.tipo} ${prenda.cantidad} `)
+    prendas.forEach(prenda => {
+        contenido = `${contenido} ${prenda.precio} ${prenda.tipo} ${prenda.cantidad} <br>`})
     return contenido
 }
 
@@ -41,11 +40,11 @@ elemento.classList.add("Nodo")
 zonaPrenda.appendChild(elemento)
 
 mostrar.addEventListener('mouseover', () => {
-    elemento.textContent = lista_actual()
+    elemento.innerHTML = lista_actual()
 })
 
 mostrar.addEventListener('mouseout', () => {
-
+    elemento.innerHTML = ""
 })
 
 
@@ -55,7 +54,7 @@ zonaDefinicion.appendChild(element)
 total.addEventListener('click', () => {
     let cantidad_total = 0
     for (index of prendas) {
-        cantidad_total = +  index.precio_total()
+        cantidad_total =  cantidad_total +  parseInt(index.precio_total())
     }
     element.textContent = cantidad_total
 })
