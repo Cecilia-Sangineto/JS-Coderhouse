@@ -24,7 +24,7 @@ agregar.addEventListener('click', () => {
     let prenda = new Prenda(precio, tipo, cantidad)
 
     prendas.push(prenda)
-    alert(prendas.length)
+    // alert(prendas.length)
 })
 
 function lista_actual() {
