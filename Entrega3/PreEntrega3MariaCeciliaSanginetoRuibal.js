@@ -23,14 +23,24 @@ agregar.addEventListener('click', () => {
     let cantidad = prompt("Ingrese la cantidad a comprar")
     let prenda = new Prenda(precio, tipo, cantidad)
 
-    prendas.push(prenda)
+    prendas.push(prenda);
+    localStorage.setItem('myPrendas',JSON.stringify(prendas));
+    
     // alert(prendas.length)
 })
 
 function lista_actual() {
-    let contenido = ""
-    prendas.forEach(prenda => {
-        contenido = `${contenido} ${prenda.precio} ${prenda.tipo} ${prenda.cantidad} <br>`})
+    let contenido = "";
+    var prendas = JSON.parse(localStorage.getItem("myPrendas"));
+    console.log(prendas)
+
+    for (const prenda of prendas) {
+        console.log(prenda);
+        contenido = `${contenido} ${prenda.precio} ${prenda.tipo} ${prenda.cantidad} <br>`
+    }
+    
+    // prendas.forEach(prenda => {
+    //     contenido = `${contenido} ${prenda.precio} ${prenda.tipo} ${prenda.cantidad} <br>`})
     return contenido
 }
 
@@ -51,6 +61,7 @@ mostrar.addEventListener('mouseout', () => {
 let zonaDefinicion = document.getElementById('total-productos')
 let element = document.createElement('p')
 zonaDefinicion.appendChild(element)
+
 total.addEventListener('click', () => {
     let cantidad_total = 0
     for (index of prendas) {
