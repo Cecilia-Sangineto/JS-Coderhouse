@@ -1,21 +1,21 @@
 // Armar una funcion que tome cinco números ingresados por medio de un prompt 
 // y devuelva el promedio de dichos números.​
 
-let numeros = []
+let numeros = [] // 1,2,3,4,5
 
 function calcular_promedio() {
     let suma = 0;
     let i = 0;
 
-    for (index of numeros) {
-        suma = suma + parseInt( index )
-        i++
+    for (num of numeros) {
+        suma = suma + parseInt( num );
+        i++;
     }
-    return (suma/i)
+    return (suma/i);
 }
 
 for (let i = 0; i < 5; i++) {
-    let numero = prompt("Ingrese el numero :" + i)
+    let numero = prompt("Ingrese el numero de la posicion:" + i)
     numeros.push(numero)
 }
 

@@ -20,8 +20,7 @@ let botones = document.querySelectorAll("button");
 botones.forEach((boton) => {
     boton.addEventListener('click', () => {
         console.log("Hiciste Click")
-        boton.classList.add("fondo")
-
+        //boton.classList.add("fondo")
         boton.style.backgroundColor = "pink"
     })
 })

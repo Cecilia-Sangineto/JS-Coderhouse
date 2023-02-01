@@ -10,11 +10,10 @@ document.body.appendChild(elemento)
 
 // Concatenamos por medio de un for of los metodos de mi lista de metodos
 
-let nodoPadre = document.getElementById('metodos')
 let lista = document.createElement('ul');
 let metodos = ["createElement()", "appendChild()", "insertBefore()", "removeChild()", "replaceChild()", "removeAttribute()", "classList.add()", "classList.remove()", "classList.toggle()"]
 
-for (metodo of metodos) {
+for (metodo of metodos) { // "cretateElemet"
     let item = document.createElement('li');
     item.textContent = metodo;
 
